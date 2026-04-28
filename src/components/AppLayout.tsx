@@ -31,7 +31,7 @@ export function AppLayout() {
         }`}
       >
         <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200 dark:border-gray-700">
-          <h1 className="text-lg font-semibold">WhatsApp Admin</h1>
+          <h1 className="text-lg font-semibold text-orange-500">Efi Bank</h1>
           <button className="md:hidden p-1" onClick={() => setSidebarOpen(false)}>
             <X className="h-5 w-5" />
           </button>
