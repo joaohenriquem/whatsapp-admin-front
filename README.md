@@ -2,6 +2,8 @@
 
 Painel administrativo para monitorar e gerenciar a integração de mensagens entre WhatsApp e Slack, com dashboard em tempo real, listagem com filtros e exportação CSV.
 
+🔗 **Demo:** [https://whatsapp-admin-front.onrender.com](https://whatsapp-admin-front.onrender.com)
+
 ![React](https://img.shields.io/badge/React-19-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4)
