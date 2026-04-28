@@ -36,7 +36,7 @@ export function LoginPage() {
         <div className="flex flex-col items-center mb-8">
           <img src={efiLogo} alt="Efi Bank" className="h-12 mb-4" />
           <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-            WhatsApp Admin
+            Efí - WhatsApp Admin
           </h1>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
             Faça login para acessar o painel
