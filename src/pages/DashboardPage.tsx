@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { MessageSquare, ArrowRightLeft, AlertTriangle, TrendingUp } from 'lucide-react';
+import { MessageSquare, ArrowRightLeft, AlertTriangle } from 'lucide-react';
 import api from '../lib/api';
 import type { StatsResponse } from '../lib/types';
 import { StatsCard } from '../components/StatsCard';
