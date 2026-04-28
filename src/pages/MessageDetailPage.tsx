@@ -6,7 +6,8 @@ import { ptBR } from 'date-fns/locale';
 import api from '../lib/api';
 import type { MessageDTO } from '../lib/types';
 
-const N8N_BASE_URL = import.meta.env.VITE_N8N_URL || 'https://n8n-credit.testegerencianet.com.br';
+const N8N_BASE_URL = import.meta.env.VITE_N8N_URL || 'https://n8n-credit.interno.testegerencianet.com.br';
+const N8N_WORKFLOW_ID = import.meta.env.VITE_N8N_WORKFLOW_ID || '';
 
 const statusLabels: Record<string, string> = {
   sent: 'Enviado',
@@ -92,7 +93,7 @@ export function MessageDetailPage() {
             value={
               message.n8n_execution_id ? (
                 <a
-                  href={`${N8N_BASE_URL}/execution/${message.n8n_execution_id}`}
+                  href={`${N8N_BASE_URL}/workflow/${N8N_WORKFLOW_ID}/executions/${message.n8n_execution_id}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-blue-600 hover:underline"
