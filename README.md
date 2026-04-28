@@ -122,6 +122,28 @@ O frontend consome os seguintes endpoints:
 | `GET` | `/messages/stats` | Estatísticas do dashboard |
 | `GET` | `/messages/export` | Exportação CSV |
 
+## Deploy no Render
+
+1. Acesse [render.com](https://render.com) e crie um novo **Static Site**
+2. Conecte o repositório `joaohenriquem/whatsapp-admin-front`
+3. Configure:
+
+| Campo | Valor |
+|---|---|
+| Build Command | `npm install && npm run build` |
+| Publish Directory | `dist` |
+
+4. Adicione as variáveis de ambiente:
+
+| Variável | Valor |
+|---|---|
+| `VITE_API_URL` | URL da sua API (ex: `https://sua-api.onrender.com/api`) |
+| `VITE_N8N_URL` | URL da sua instância n8n |
+
+> O arquivo `public/_redirects` já está configurado para garantir que todas as rotas da SPA funcionem corretamente no Render.
+
+O deploy acontece automaticamente a cada push na branch `main`.
+
 ## Licença
 
 Este projeto é privado.
