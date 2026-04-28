@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { MessageSquare } from 'lucide-react';
+import efiLogo from '../static/logo-efi-bank-orange.svg';
 
 export function LoginPage() {
   const [email, setEmail] = useState('');
@@ -34,9 +34,7 @@ export function LoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 px-4">
       <div className="w-full max-w-sm">
         <div className="flex flex-col items-center mb-8">
-          <div className="bg-blue-600 p-3 rounded-xl mb-4">
-            <MessageSquare className="h-8 w-8 text-white" />
-          </div>
+          <img src={efiLogo} alt="Efi Bank" className="h-12 mb-4" />
           <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
             WhatsApp Admin
           </h1>

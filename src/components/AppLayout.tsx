@@ -3,6 +3,7 @@ import { Link, useLocation, Outlet } from 'react-router-dom';
 import { LayoutDashboard, MessageSquare, Menu, X, LogOut, Users } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { useAuth } from '../contexts/AuthContext';
+import efiLogo from '../static/logo-efi-bank-orange.svg';
 
 const navItems = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard },
@@ -31,7 +32,7 @@ export function AppLayout() {
         }`}
       >
         <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200 dark:border-gray-700">
-          <h1 className="text-lg font-semibold text-orange-500">Efi Bank</h1>
+          <img src={efiLogo} alt="Efi Bank" className="h-8" />
           <button className="md:hidden p-1" onClick={() => setSidebarOpen(false)}>
             <X className="h-5 w-5" />
           </button>
