@@ -1,12 +1,12 @@
-import { useQuery } from '@tanstack/react-query';
-import { MessageSquare, ArrowRightLeft, AlertTriangle } from 'lucide-react';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { MessageSquare, ArrowRightLeft, AlertTriangle, RefreshCw } from 'lucide-react';
 import api from '../lib/api';
 import type { StatsResponse } from '../lib/types';
 import { StatsCard } from '../components/StatsCard';
 import { VolumeChart } from '../components/VolumeChart';
 
 export function DashboardPage() {
-  const { data: stats, isLoading, error } = useQuery<StatsResponse>({
+  const { data: stats, isLoading, error, isFetching } = useQuery<StatsResponse>({
     queryKey: ['stats'],
     queryFn: async () => {
       const { data } = await api.get('/messages/stats');
@@ -14,6 +14,12 @@ export function DashboardPage() {
     },
     refetchInterval: 30000,
   });
+
+  const queryClient = useQueryClient();
+
+  const handleRefresh = () => {
+    queryClient.invalidateQueries({ queryKey: ['stats'] });
+  };
 
   if (isLoading) {
     return (
@@ -47,7 +53,17 @@ export function DashboardPage() {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-bold">Dashboard</h2>
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-bold">Dashboard</h2>
+        <button
+          onClick={handleRefresh}
+          disabled={isFetching}
+          className="flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-md bg-white dark:bg-gray-800 shadow hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-50 transition-colors"
+        >
+          <RefreshCw className={`h-4 w-4 ${isFetching ? 'animate-spin' : ''}`} />
+          Atualizar
+        </button>
+      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <StatsCard
